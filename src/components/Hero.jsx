@@ -24,7 +24,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-6 text-xl sm:text-2xl text-jjk-text-dim max-w-xl">
-              Full Stack Developer & AI/ML enthusiast — building systems that scale and ideas that connect.
+              Software Engineer & AI/ML enthusiast — building systems that scale and ideas that connect.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
               <a
