@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import HoverRevealText from './HoverRevealText'
 
 const jobs = [
   {
@@ -41,17 +42,17 @@ function Card({ job, speed = 0.1 }) {
   return (
     <article
       ref={ref}
-      className="p-6 sm:p-8 rounded-2xl bg-anime-card backdrop-blur border border-anime-border shadow-sm hover:shadow-anime-glow hover:border-anime-purple/40 transition-all duration-300"
+      className="p-6 sm:p-8 rounded-2xl bg-jjk-card backdrop-blur border border-jjk-border shadow-sm hover:shadow-[0_0_32px_rgba(147,51,234,0.25)] hover:border-jjk-curse/50 transition-all duration-300 curse-card"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold text-anime-text font-anime">{job.title}</h3>
-        <span className="text-sm text-anime-muted whitespace-nowrap">{job.period}</span>
+        <h3 className="text-lg font-semibold text-jjk-text font-anime">{job.title}</h3>
+        <span className="text-sm text-jjk-muted whitespace-nowrap">{job.period}</span>
       </div>
-      <p className="mt-2 text-anime-cyan font-medium">{job.company}</p>
-      <ul className="mt-4 space-y-2 text-anime-text-dim text-sm">
+      <p className="mt-2 text-jjk-infinity font-medium">{job.company}</p>
+      <ul className="mt-4 space-y-2 text-jjk-text-dim text-sm">
         {job.points.map((point, i) => (
           <li key={i} className="flex gap-2">
-            <span className="text-anime-pink mt-1.5">•</span>
+            <span className="text-jjk-curse mt-1.5">•</span>
             <span>{point}</span>
           </li>
         ))}
@@ -64,9 +65,11 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 sm:py-32 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold text-anime-text mb-12 font-anime">
-          Experience
-        </h2>
+        <HoverRevealText
+          label="Experience"
+          reveal="Where I've been"
+          className="text-3xl sm:text-4xl mb-12 block"
+        />
         <div className="grid gap-6 md:grid-cols-2">
           {jobs.map((job, i) => (
             <Card key={job.title} job={job} speed={0.08 + i * 0.04} />

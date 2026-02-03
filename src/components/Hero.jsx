@@ -17,19 +17,19 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           <div className="flex-1 text-center lg:text-left animate-fade-in-up">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-anime-text tracking-tight font-anime">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-jjk-text tracking-tight font-anime">
               <span className="block">Build</span>
-              <span className="block bg-gradient-to-r from-anime-pink via-anime-purple to-anime-cyan bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-jjk-curse via-jjk-curseLight to-jjk-sukuna bg-clip-text text-transparent">
                 Impact
               </span>
             </h1>
-            <p className="mt-6 text-xl sm:text-2xl text-anime-text-dim max-w-xl">
+            <p className="mt-6 text-xl sm:text-2xl text-jjk-text-dim max-w-xl">
               Full Stack Developer & AI/ML enthusiast — building systems that scale and ideas that connect.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
               <a
                 href="mailto:ajay192006@gmail.com"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-anime-purple text-white font-medium hover:bg-anime-pink hover:shadow-anime-glow-pink transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-jjk-curse text-jjk-light font-medium hover:bg-jjk-sukuna hover:shadow-[0_0_24px_rgba(147,51,234,0.4)] transition-all duration-300"
               >
                 Email me
               </a>
@@ -37,7 +37,7 @@ export default function Hero() {
                 href="https://github.com/Ajaysvasan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full border border-anime-border text-anime-text font-medium hover:border-anime-pink hover:text-anime-pink transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-full border border-jjk-border text-jjk-light font-medium hover:border-jjk-curse hover:text-jjk-silver transition-colors"
               >
                 GitHub
               </a>
@@ -45,7 +45,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/ajay-s-vasan-584111291"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-full border border-anime-border text-anime-text font-medium hover:border-anime-cyan hover:text-anime-cyan transition-colors"
+                className="inline-flex items-center px-6 py-3 rounded-full border border-jjk-border text-jjk-light font-medium hover:border-jjk-infinity hover:text-jjk-silver transition-colors"
               >
                 LinkedIn
               </a>
@@ -64,7 +64,7 @@ export default function Hero() {
               }}
             >
               <p
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold font-anime bg-gradient-to-b from-anime-lavender to-anime-purple bg-clip-text text-transparent whitespace-nowrap animate-name-reveal"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold font-anime bg-gradient-to-b from-jjk-silver via-jjk-light to-jjk-curse bg-clip-text text-transparent whitespace-nowrap animate-name-reveal"
                 style={{
                   animationDelay: '350ms',
                   opacity: 0,
@@ -74,9 +74,9 @@ export default function Hero() {
                 Ajay S Vasan
               </p>
             </div>
-            <div className="relative w-56 h-56 sm:w-72 sm:h-72 flex-shrink-0 group">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-anime-purple via-anime-pink to-anime-cyan opacity-40 group-hover:opacity-70 blur-sm transition-opacity duration-500" />
-              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-anime-card border border-anime-border shadow-anime-glow animate-float-slow transition-transform duration-500 group-hover:scale-[1.03] group-hover:shadow-anime-glow-pink">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 flex-shrink-0 group">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-jjk-curse via-jjk-sukuna to-jjk-infinity opacity-40 group-hover:opacity-70 blur-sm transition-opacity duration-500" />
+              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-jjk-card border border-jjk-border shadow-[0_0_40px_rgba(147,51,234,0.25)] animate-float-slow transition-transform duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_0_32px_rgba(147,51,234,0.4)]">
                 {!imgError ? (
                   <img
                     src="/images/profile.jpg"
@@ -85,7 +85,7 @@ export default function Hero() {
                     onError={() => setImgError(true)}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-anime-muted text-center p-4">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-jjk-muted text-center p-4">
                     <span className="text-sm font-medium">Your photo</span>
                     <small className="text-xs mt-1">images/profile.jpg</small>
                   </div>
@@ -95,10 +95,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-2 text-anime-muted text-sm animate-fade-in">
+        <div className="mt-16 flex flex-col items-center gap-2 text-jjk-muted text-sm animate-fade-in">
           <span>Scroll to explore</span>
-          <div className="w-6 h-10 rounded-full border-2 border-anime-border flex justify-center pt-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-anime-pink animate-bounce" />
+          <div className="w-6 h-10 rounded-full border-2 border-jjk-border flex justify-center pt-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-jjk-curse animate-bounce" />
           </div>
         </div>
       </div>

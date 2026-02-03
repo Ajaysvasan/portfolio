@@ -1,3 +1,5 @@
+import HoverRevealText from './HoverRevealText'
+
 const links = [
   { href: "mailto:ajay192006@gmail.com", label: "ajay192006@gmail.com" },
   { href: "https://github.com/Ajaysvasan", label: "GitHub", external: true },
@@ -12,13 +14,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 sm:py-32 scroll-mt-20 bg-anime-surface/30"
+      className="py-24 sm:py-32 scroll-mt-20 bg-jjk-surface/30"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-anime-text mb-4 font-anime">
-          Get in touch
-        </h2>
-        <p className="text-anime-text-dim mb-10">
+        <HoverRevealText
+          label="Get in touch"
+          reveal="Reach out"
+          className="text-3xl sm:text-4xl mb-4 block"
+        />
+        <p className="text-jjk-text-dim mb-10">
           Have a project in mind or want to connect?
         </p>
         <div className="flex flex-wrap justify-center gap-6">
@@ -28,7 +32,7 @@ export default function Contact() {
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="text-anime-lavender font-medium hover:text-anime-pink transition-colors underline underline-offset-4"
+              className="text-jjk-silver font-medium hover:text-jjk-curseLight transition-colors underline underline-offset-4 text-highlight-hover"
             >
               {label}
             </a>

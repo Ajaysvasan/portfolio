@@ -19,12 +19,11 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-anime-surface/90 backdrop-blur-md border-b border-anime-border' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-jjk-surface/90 backdrop-blur-md border-b border-jjk-border' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-semibold text-anime-text hover:text-anime-pink transition-colors font-anime">
+        <a href="#" className="text-xl font-semibold text-jjk-light hover:text-jjk-curse transition-colors font-anime">
           Ajay
         </a>
         <div className="hidden md:flex items-center gap-8">
@@ -32,7 +31,7 @@ export default function Nav() {
             <a
               key={href}
               href={href}
-              className="text-sm font-medium text-anime-text-dim hover:text-anime-lavender transition-colors"
+              className="text-sm font-medium text-jjk-text-dim hover:text-jjk-curseLight transition-colors text-highlight-hover"
             >
               {label}
             </a>
@@ -40,7 +39,7 @@ export default function Nav() {
         </div>
         <a
           href="#contact"
-          className="text-sm font-medium px-4 py-2 rounded-full bg-anime-purple/80 text-white hover:bg-anime-pink hover:shadow-anime-glow-pink transition-all duration-300"
+          className="text-sm font-medium px-4 py-2 rounded-full bg-jjk-curse/80 text-jjk-light hover:bg-jjk-sukuna hover:shadow-[0_0_24px_rgba(147,51,234,0.4)] transition-all duration-300"
         >
           Get in touch
         </a>

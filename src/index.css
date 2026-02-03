@@ -7,30 +7,39 @@ html {
 }
 
 body {
-  @apply font-sans antialiased text-anime-text bg-anime-bg;
+  @apply font-sans antialiased text-jjk-text bg-jjk-bg;
+}
+
+body.cursor-jjk {
+  cursor: none;
+}
+
+body.cursor-jjk a,
+body.cursor-jjk button {
+  cursor: none;
 }
 
 ::selection {
-  background: rgba(179, 102, 255, 0.35);
-  color: #fff;
+  background: rgba(147, 51, 234, 0.4);
+  color: #f8fafc;
 }
 
-/* Anime-style scrollbar */
+/* JJK-style scrollbar with curse energy gradient */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #120b1e;
+  background: #030308;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #b366ff 0%, #ff6b9d 100%);
+  background: linear-gradient(180deg, #9333ea 0%, #6b21a8 50%, #dc2626 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c4a8ff 0%, #ff8fb5 100%);
+  background: linear-gradient(180deg, #c084fc 0%, #9333ea 50%, #f43f5e 100%);
 }
 
 /* Subtle grain overlay for anime aesthetic */
@@ -41,4 +50,109 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
+}
+
+/* Text highlight effect on hover */
+.text-highlight-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.text-highlight-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #9333ea, #c084fc, #f43f5e);
+  transition: width 0.3s ease;
+}
+
+.text-highlight-hover:hover::after {
+  width: 100%;
+}
+
+.text-highlight-hover:hover {
+  color: #c084fc;
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+/* Curse energy glow effect for cards */
+.curse-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.curse-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #9333ea, #6b21a8, #dc2626, #9333ea);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: curseGradientFlow 8s ease infinite;
+}
+
+.curse-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes curseGradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Domain expansion effect */
+.domain-effect {
+  position: relative;
+}
+
+.domain-effect::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.domain-effect:hover::after {
+  opacity: 1;
+}
+
+/* Sukuna marks animation */
+@keyframes sukunaMarks {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Spin animation for cursor */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Blink animation for text cursor */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.3; }
+}
+
+/* JJK character silhouette decorations */
+.jjk-decoration {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.15;
+  filter: blur(1px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.jjk-decoration:hover {
+  opacity: 0.25;
+  transform: scale(1.02);
 }

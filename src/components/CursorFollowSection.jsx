@@ -1,21 +1,13 @@
 import { useCursorFollow } from '../hooks/useCursorFollow'
 
-/**
- * Wraps content and provides cursor-follow data to children.
- * Renders floating decorative elements that move with the cursor in an anime/antigravity style.
- */
 export default function CursorFollowSection({ children, className = '', as: Tag = 'section', ...rest }) {
   const { sectionRef, position } = useCursorFollow({ smoothing: 0.06, maxOffset: 28 })
 
   return (
     <Tag ref={sectionRef} className={`relative overflow-hidden ${className}`} {...rest}>
-      {/* Cursor-following glow orbs - only visible when pointer is in section */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        aria-hidden
-      >
+      <div className="pointer-events-none absolute inset-0 opacity-30" aria-hidden>
         <div
-          className="absolute w-64 h-64 rounded-full bg-anime-purple/30 blur-[80px] transition-opacity duration-300"
+          className="absolute w-64 h-64 rounded-full bg-gojo-indigo/25 blur-[80px] transition-opacity duration-300"
           style={{
             left: '50%',
             top: '50%',
@@ -23,7 +15,7 @@ export default function CursorFollowSection({ children, className = '', as: Tag 
           }}
         />
         <div
-          className="absolute w-48 h-48 rounded-full bg-anime-pink/25 blur-[60px] transition-opacity duration-300"
+          className="absolute w-48 h-48 rounded-full bg-gojo-purple/20 blur-[60px] transition-opacity duration-300"
           style={{
             left: '60%',
             top: '40%',
@@ -31,7 +23,7 @@ export default function CursorFollowSection({ children, className = '', as: Tag 
           }}
         />
         <div
-          className="absolute w-40 h-40 rounded-full bg-anime-cyan/20 blur-[50px] transition-opacity duration-300"
+          className="absolute w-40 h-40 rounded-full bg-gojo-cyan/15 blur-[50px] transition-opacity duration-300"
           style={{
             left: '35%',
             top: '55%',
