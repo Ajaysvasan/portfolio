@@ -12,9 +12,12 @@ import ParallaxBg from './components/ParallaxBg'
 import GojoCursor from './components/GojoCursor'
 import FloatingOrbs from './components/FloatingOrbs'
 import JJKCharacters from './components/JJKCharacters'
+import HollowPurpleIntro from './components/HollowPurpleIntro'
 
 function App() {
   const [useCustomCursor, setUseCustomCursor] = useState(false)
+  const [showIntro, setShowIntro] = useState(true)
+  const [introComplete, setIntroComplete] = useState(false)
 
   useEffect(() => {
     const year = document.getElementById('year')
@@ -28,25 +31,40 @@ function App() {
     return () => document.body.classList.remove('cursor-jjk')
   }, [])
 
+  const handleIntroComplete = () => {
+    setIntroComplete(true)
+    // Small delay before hiding the intro overlay
+    setTimeout(() => setShowIntro(false), 800)
+  }
+
   return (
     <>
-      <ParallaxBg />
-      <JJKCharacters />
-      <FloatingOrbs />
-      {useCustomCursor && <GojoCursor />}
-      <Nav />
-      <main>
-        <Hero />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Achievements />
-        <Contact />
-      </main>
-      <Footer />
+      {/* Hollow Purple Intro Animation */}
+      {showIntro && (
+        <HollowPurpleIntro onComplete={handleIntroComplete} />
+      )}
+
+      {/* Main Portfolio Content */}
+      <div className={introComplete ? 'main-content-visible' : 'main-content-hidden'}>
+        <ParallaxBg />
+        <JJKCharacters />
+        <FloatingOrbs />
+        {useCustomCursor && <GojoCursor />}
+        <Nav />
+        <main>
+          <Hero />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Education />
+          <Achievements />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
 
 export default App
+
