@@ -1,24 +1,30 @@
-import HoverRevealText from './HoverRevealText'
+import PageShell from './PageShell'
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 sm:py-32 scroll-mt-20 bg-jjk-surface/30">
-      <div className="max-w-6xl mx-auto px-6">
-        <HoverRevealText
-          label="Education"
-          reveal="Where I learned"
-          className="text-3xl sm:text-4xl mb-12 block"
-        />
-        <div className="p-8 rounded-2xl bg-jjk-card border border-jjk-border shadow-sm max-w-2xl hover:shadow-[0_0_32px_rgba(147,51,234,0.25)] transition-all duration-300 curse-card">
-          <h3 className="text-xl font-semibold text-jjk-text font-anime">
-            B.Tech – Artificial Intelligence & Machine Learning
+    <PageShell id="education">
+      <div className="grid gap-12 border-t border-void-line pt-12 md:grid-cols-12">
+        <div className="md:col-span-8">
+          <p className="reveal text-[11px] font-bold uppercase tracking-[0.25em] text-ink-muted" style={{ '--i': 3 }}>
+            B.Tech · Expected 2027.05
+          </p>
+          <h3 className="mt-5 font-display text-[clamp(2.6rem,6.5vw,5.5rem)] uppercase leading-[0.92] tracking-[0.01em] text-white">
+            <span className="mask-line" style={{ '--i': 3 }}>
+              <span>Artificial Intelligence</span>
+            </span>
+            <span className="mask-line" style={{ '--i': 4 }}>
+              <span>&amp; Machine Learning</span>
+            </span>
           </h3>
-          <p className="mt-2 text-jjk-infinity font-medium">
+          <p className="reveal mt-7 text-lg font-bold text-sixeyes" style={{ '--i': 5 }}>
             St. Joseph's College of Engineering, Chennai
           </p>
-          <p className="mt-1 text-sm text-jjk-muted">Expected May 2027 · CGPA: 8.11 / 10</p>
+        </div>
+        <div className="reveal md:col-span-4 md:border-l md:border-void-line md:pl-10" style={{ '--i': 5 }}>
+          <span className="block font-display text-[clamp(5.5rem,13vw,10rem)] leading-[0.85] hollow-ink">8.11</span>
+          <span className="mt-4 block text-[11px] font-bold uppercase tracking-[0.25em] text-ink-muted">CGPA out of 10</span>
         </div>
       </div>
-    </section>
+    </PageShell>
   )
 }
